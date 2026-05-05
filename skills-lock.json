@@ -6,6 +6,12 @@
       "sourceType": "github",
       "computedHash": "a4c830509e85557b59339d8d93a4e243e9e59c686e7678854d39230e12c2a6dc"
     },
+    "caveman": {
+      "source": "mattpocock/skills",
+      "sourceType": "github",
+      "skillPath": "skills/productivity/caveman/SKILL.md",
+      "computedHash": "536908fcfcb232600a5875aa85f1fd50fd13305e9d67379bcd95f07c8c916f3f"
+    },
     "emil-design-eng": {
       "source": "emilkowalski/skill",
       "sourceType": "github",
@@ -43,6 +49,12 @@
       "sourceType": "github",
       "skillPath": "skills/engineering/to-issues/SKILL.md",
       "computedHash": "7b35050573981106debeb743de355fb18b898660bd643b646aa61a43c3fe1cef"
+    },
+    "to-prd": {
+      "source": "mattpocock/skills",
+      "sourceType": "github",
+      "skillPath": "skills/engineering/to-prd/SKILL.md",
+      "computedHash": "b3ebbc8aad6e91d04aa1b5c0387ce556b32adc8d60d130d61f90a2b84a38addc"
     },
     "vercel-composition-patterns": {
       "source": "vercel-labs/agent-skills",
