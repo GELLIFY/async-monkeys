@@ -1,0 +1,15 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(pandoc \"C:\\\\Repos\\\\async-monkeys\\\\PRD_Retrospettiva_Agile_MVP.docx\" -t plain)",
+      "PowerShell(pnpm drizzle-kit generate 2>&1)",
+      "Bash(bun test *)",
+      "Bash(where bun *)",
+      "Read(//c/Users/moreno.dercoli/.bun/**)",
+      "Read(//c/Users/moreno.dercoli/AppData/Local/**)",
+      "Read(//c/Users/moreno.dercoli/**)",
+      "PowerShell(Get-ChildItem \"$env:USERPROFILE\" -Filter \"bun.exe\" -Recurse -ErrorAction SilentlyContinue -Depth 4 | Select-Object FullName)",
+      "PowerShell(pnpm test -- --bail 2>&1 | Select-Object -First 30)"
+    ]
+  }
+}

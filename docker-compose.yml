@@ -30,7 +30,7 @@ services:
       timeout: 5s
       retries: 5
     logging:
-      driver: "local"
+      driver: "json-file"
       options:
         max-size: "20m"
         max-file: "5"
@@ -42,7 +42,7 @@ services:
     ports:
       - "4444:4444"
     logging:
-      driver: "local"
+      driver: "json-file"
       options:
         max-size: "10m"
         max-file: "3"
