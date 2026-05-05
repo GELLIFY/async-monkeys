@@ -23,7 +23,7 @@ export async function addTeamMember(db: DBClient, params: AddTeamMemberParams) {
     throw new TRPCError({ code: "NOT_FOUND", message: "Team non trovato" });
   }
 
-  if (team.leaderId !== requesterId) {
+  if (team.teamLeaderId !== requesterId) {
     throw new TRPCError({
       code: "UNAUTHORIZED",
       message: "Solo il team leader può aggiungere membri",

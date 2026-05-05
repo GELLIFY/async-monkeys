@@ -3,7 +3,7 @@ import { pgEnum } from "drizzle-orm/pg-core";
 import { timestamps } from "../utils";
 import { createTable } from "./_table";
 import { user } from "./auth-schema";
-import { teamTable } from "./team-schema";
+import { teamTable } from "./team";
 
 export const sessionPhaseEnum = pgEnum("session_phase", [
   "pending",
@@ -14,7 +14,7 @@ export const sessionPhaseEnum = pgEnum("session_phase", [
   "closed",
 ]);
 
-export const sessionTable = createTable("session", (d) => ({
+export const sessionTable = createTable("retro_session", (d) => ({
   id: d.uuid("id").defaultRandom().primaryKey(),
   ...timestamps,
   teamId: d
@@ -30,7 +30,7 @@ export const sessionTable = createTable("session", (d) => ({
   closedAt: d.timestamp({ withTimezone: true, mode: "string" }),
 }));
 
-export const sessionRelations = relations(sessionTable, ({ one }) => ({
+export const retroSessionRelations = relations(sessionTable, ({ one }) => ({
   team: one(teamTable, {
     fields: [sessionTable.teamId],
     references: [teamTable.id],

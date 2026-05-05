@@ -1,4 +1,4 @@
-import { afterAll, afterEach, beforeEach, mock } from "bun:test";
+import { afterAll, afterEach, beforeAll, beforeEach, mock } from "bun:test";
 import { PGlite } from "@electric-sql/pglite";
 import { drizzle } from "drizzle-orm/pglite";
 import { migrate } from "drizzle-orm/pglite/migrator";
@@ -21,11 +21,13 @@ await mock.module("../server/db", () => {
   return { client, db };
 });
 
-// Apply migrations before each test
-beforeEach(async () => {
+// Apply migrations once per file — schema is stable across tests
+beforeAll(async () => {
   await migrate(db, { migrationsFolder: "src/server/db/migrations" });
+});
 
-  // create a test user
+// Create a test user before each test (reset clears it in afterEach)
+beforeEach(async () => {
   await db.insert(user).values({
     id: "00000000-0000-0000-0000-000000000000",
     email: "matteo.badini@gellify.com",

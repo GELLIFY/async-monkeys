@@ -13,7 +13,7 @@ CREATE TABLE "acme_team_membership" (
 	"team_id" uuid NOT NULL
 );
 --> statement-breakpoint
-CREATE TABLE "acme_session" (
+CREATE TABLE "acme_retro_session" (
 	"id" uuid PRIMARY KEY DEFAULT gen_random_uuid() NOT NULL,
 	"created_at" timestamp with time zone DEFAULT now() NOT NULL,
 	"updated_at" timestamp with time zone,
@@ -30,6 +30,6 @@ ALTER TABLE "acme_team_membership" ADD CONSTRAINT "acme_team_membership_user_id_
 --> statement-breakpoint
 ALTER TABLE "acme_team_membership" ADD CONSTRAINT "acme_team_membership_team_id_acme_team_id_fk" FOREIGN KEY ("team_id") REFERENCES "public"."acme_team"("id") ON DELETE cascade ON UPDATE no action;
 --> statement-breakpoint
-ALTER TABLE "acme_session" ADD CONSTRAINT "acme_session_team_id_acme_team_id_fk" FOREIGN KEY ("team_id") REFERENCES "public"."acme_team"("id") ON DELETE cascade ON UPDATE no action;
+ALTER TABLE "acme_retro_session" ADD CONSTRAINT "acme_retro_session_team_id_acme_team_id_fk" FOREIGN KEY ("team_id") REFERENCES "public"."acme_team"("id") ON DELETE cascade ON UPDATE no action;
 --> statement-breakpoint
-ALTER TABLE "acme_session" ADD CONSTRAINT "acme_session_facilitator_id_acme_user_id_fk" FOREIGN KEY ("facilitator_id") REFERENCES "public"."acme_user"("id") ON DELETE cascade ON UPDATE no action;
+ALTER TABLE "acme_retro_session" ADD CONSTRAINT "acme_retro_session_facilitator_id_acme_user_id_fk" FOREIGN KEY ("facilitator_id") REFERENCES "public"."acme_user"("id") ON DELETE cascade ON UPDATE no action;

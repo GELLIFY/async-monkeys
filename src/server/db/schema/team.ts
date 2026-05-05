@@ -9,8 +9,8 @@ export const teamTable = createTable("team", (d) => ({
   ...timestamps,
 
   name: d.varchar({ length: 60 }).notNull(),
-  leaderId: d
-    .uuid()
+  teamLeaderId: d
+    .uuid("team_leader_id")
     .references(() => user.id, { onDelete: "cascade" })
     .notNull(),
 }));
@@ -34,7 +34,7 @@ export const teamMembershipTable = createTable(
 );
 
 export const teamRelations = relations(teamTable, ({ one, many }) => ({
-  leader: one(user, { fields: [teamTable.leaderId], references: [user.id] }),
+  leader: one(user, { fields: [teamTable.teamLeaderId], references: [user.id] }),
   memberships: many(teamMembershipTable),
 }));
 

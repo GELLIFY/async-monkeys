@@ -30,7 +30,7 @@ beforeEach(async () => {
 
   const [team] = await db
     .insert(teamTable)
-    .values({ name: "Team Alpha", leaderId })
+    .values({ name: "Team Alpha", teamLeaderId: leaderId })
     .returning();
   teamId = team!.id;
 

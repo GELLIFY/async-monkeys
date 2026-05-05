@@ -2,7 +2,7 @@ import { beforeEach, expect, test } from "bun:test";
 import { db } from "@/server/db";
 import { user as userTable } from "@/server/db/schema/auth-schema";
 import { sessionTable } from "@/server/db/schema/session-schema";
-import { teamTable } from "@/server/db/schema/team-schema";
+import { teamTable } from "@/server/db/schema/team";
 import { openCollectionPhase } from "./session-service";
 
 const FACILITATOR_ID = "00000000-0000-0000-0000-000000000001";

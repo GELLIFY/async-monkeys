@@ -9,7 +9,8 @@
       "Read(//c/Users/moreno.dercoli/AppData/Local/**)",
       "Read(//c/Users/moreno.dercoli/**)",
       "PowerShell(Get-ChildItem \"$env:USERPROFILE\" -Filter \"bun.exe\" -Recurse -ErrorAction SilentlyContinue -Depth 4 | Select-Object FullName)",
-      "PowerShell(pnpm test -- --bail 2>&1 | Select-Object -First 30)"
+      "PowerShell(pnpm test -- --bail 2>&1 | Select-Object -First 30)",
+      "Bash(bun run *)"
     ]
   }
 }

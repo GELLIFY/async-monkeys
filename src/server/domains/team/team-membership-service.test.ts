@@ -24,7 +24,7 @@ beforeEach(async () => {
 
   const [team] = await db
     .insert(teamTable)
-    .values({ name: "Team Alpha", leaderId })
+    .values({ name: "Team Alpha", teamLeaderId: leaderId })
     .returning();
 
   teamId = team!.id;
@@ -131,7 +131,7 @@ test("addTeamMember - un utente può essere membro di più team in parallelo", a
 
   const [team2] = await db
     .insert(teamTable)
-    .values({ name: "Team Beta", leaderId: leader2Id })
+    .values({ name: "Team Beta", teamLeaderId: leader2Id })
     .returning();
   await db
     .insert(teamMembershipTable)
