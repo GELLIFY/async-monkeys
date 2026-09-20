@@ -12,7 +12,7 @@ services:
       - db
 
   db:
-    image: postgres:17@sha256:7ad98329d513dd497293b951c195ca354274a77f12ddbbbbf85e68a811823d72
+    image: postgres:17@sha256:f4c66b820c6f974249089d3d16d86a3698eae11e8746eb6644b2271031e91232
     command: "-d 1"
     environment:
       POSTGRES_DB: main
