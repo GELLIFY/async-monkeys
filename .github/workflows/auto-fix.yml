@@ -39,7 +39,7 @@ jobs:
         uses: ./.github/workflows/setup
 
       - name: Run Codex
-        uses: openai/codex-action@48c4212272635ce5c50529ae1f6516040f84dc35 # main
+        uses: openai/codex-action@13e9c17417b29e9a276f73ec6ed7fb574137d3c3 # main
         id: codex
         with:
           openai-api-key: ${{ secrets.OPENAI_API_KEY }}
